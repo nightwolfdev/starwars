@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <ng-container *ngIf="specie$ | async as specie; else loading">
+        <h1 class="mb-4">{{ specie.name }}</h1>
+
+        <p>
+          <strong>Average Height:</strong> {{ specie.average_height }}<br />
+          <strong>Average Lifespan:</strong> {{ specie.average_lifespan }}<br />
+          <strong>Classification:</strong> {{ specie.classification }}<br />
+          <strong>Designation:</strong> {{ specie.designation }}<br />
+          <strong>Eye Colors:</strong> {{ specie.eye_colors }}<br />
+          <strong>Hair Colors:</strong> {{ specie.hair_colors }}<br />
+          <strong>Homeworld:</strong>&nbsp;<a [routerLink]="['/planets', specie.homeworldId]">{{ specie.homeworldData.name }}</a><br />
+          <strong>Language:</strong> {{ specie.language }}<br />
+          <strong>Skin Colors:</strong> {{ specie.skin_colors }}
+        </p>
+
+        <app-list *ngIf="specie.peopleData.length" [entries]="specie.peopleData" heading="Characters" route="characters"></app-list>
+
+        <app-list *ngIf="specie.filmsData.length" [entries]="specie.filmsData" heading="Films" route="films"></app-list>
+      </ng-container>
+      <ng-template #loading>
+        <app-loading></app-loading>
+      </ng-template>
+    </div>
+  </div>
+</div>

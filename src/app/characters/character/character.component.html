@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <ng-container *ngIf="character$ | async as character; else loading">
+        <h1 class="mb-4">{{ character.name }}</h1>
+
+        <p>
+          <strong>Born:</strong> {{ character.birth_year }}<br />
+          <strong>Eye Color:</strong> {{ character.eye_color }}<br />
+          <strong>Gender:</strong> {{ character.gender }}<br />
+          <strong>Hair Color:</strong> {{ character.hair_color }}<br />
+          <strong>Height:</strong> {{ character.height }}<br />
+          <strong>Home World:</strong>&nbsp;<a [routerLink]="['/planets', character.homeworldId]">{{ character.homeworldData.name }}</a><br />
+          <strong>Mass:</strong> {{ character.mass }}<br />
+          <strong>Skin Color:</strong> {{ character.skin_color }}
+        </p>
+
+        <app-list *ngIf="character.vehiclesData.length" [entries]="character.vehiclesData" heading="Vehicles" route="vehicles"></app-list>
+      </ng-container>
+      <ng-template #loading>
+        <app-loading></app-loading>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col">
+          <h1>Films</h1>
+        </div>
+        <div class="col mt-2">
+          <input #filter type="search" class="form-control" placeholder="Filter Films" (input)="onInput(filter.value)" [value]="currentFilter">
+        </div>
+      </div>
+      <ng-container *ngIf="films$ | async as films; else loading">
+        <app-list [entries]="films" route="films"></app-list>
+      </ng-container>
+      <ng-template #loading>
+        <app-loading></app-loading>
+      </ng-template>
+    </div>
+  </div>
+</div>

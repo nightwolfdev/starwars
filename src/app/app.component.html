@@ -1,0 +1,21 @@
+<nav id="header" class="navbar navbar-expand navbar-dark sticky-top bg-dark text-light mb-4">
+  <div class="container-fluid">
+    <div class="row" style="width: 100%">
+      <div class="col-sm-12 col-md-3">
+        <a class="navbar-brand" routerLink="/">Star Wars</a>
+      </div>
+      <div class="col-sm-12 col-md-9">
+        <ul class="navbar-nav flex-wrap justify-content-md-end">
+          <li class="nav-item"><a class="nav-link" routerLink="/characters" routerLinkActive="active">Characters</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/films" routerLinkActive="active">Films</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/planets" routerLinkActive="active">Planets</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/species" routerLinkActive="active">Species</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/starships" routerLinkActive="active">Starships</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/vehicles" routerLinkActive="active">Vehicles</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

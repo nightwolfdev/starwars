@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card mb-4">
+    <div class="card-body">
+      <ng-container *ngIf="vehicle$ | async as vehicle; else loading">
+        <h1 class="mb-4">{{ vehicle.name }}</h1>
+
+        <p>
+          <strong>Cargo Capacity:</strong> {{ vehicle.cargo_capacity }}<br />
+          <strong>Consumables:</strong> {{ vehicle.consumables }}<br />
+          <strong>Cost In Credits:</strong> {{ vehicle.cost_in_credits }}<br />
+          <strong>Crew:</strong> {{ vehicle.crew }}<br />
+          <strong>Length:</strong> {{ vehicle.length }}<br />
+          <strong>Manufacturer:</strong> {{ vehicle.manufacturer }}<br />
+          <strong>Max Atmosphering Speed:</strong> {{ vehicle.max_atmosphering_speed }}<br />
+          <strong>Model:</strong> {{ vehicle.model }}<br />
+          <strong>Passengers:</strong> {{ vehicle.passengers }}<br />
+          <strong>vehicle Class:</strong> {{ vehicle.vehicle_class }}
+        </p>
+
+        <app-list *ngIf="vehicle.pilotsData.length" [entries]="vehicle.pilotsData" heading="Characters" route="characters"></app-list>
+
+        <app-list *ngIf="vehicle.filmsData.length" [entries]="vehicle.filmsData" heading="Films" route="films"></app-list>
+      </ng-container>
+      <ng-template #loading>
+        <app-loading></app-loading>
+      </ng-template>
+    </div>
+  </div>
+</div>
