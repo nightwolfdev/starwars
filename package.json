@@ -1,5 +1,12 @@
 {
   "name": "starwars",
+  "description": "Star Wars app using Angular, RxJS, Typescript and Star Wars API.",
+  "keywords": ["api", "angular", "typescript", "rxjs"],
+  "homepage": "https://github.com/nightwolfdev/starwars",
+  "author": {
+    "name": "NightWolf Software Development",
+    "url": "https://nightwolf.dev"
+  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
