@@ -1,5 +1,7 @@
 # Star Wars
 
+![Star Wars App](./src/assets/starwars-app.png)
+
 Star Wars app using Angular, RxJS, TypeScript, and Star Wars API.
 
 ## Getting Started
